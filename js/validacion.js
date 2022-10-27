@@ -1,3 +1,6 @@
+const formulario = document.getElementById('myForm');
+const inputs = document.querySelectorAll('#myForm input');
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
@@ -17,4 +20,33 @@
           form.classList.add('was-validated')
         }, false)
       })
-  })()
+})()
+  
+//Validacion Contraseña
+const validarpass = () =>{
+  var pass1 = document.getElementById("password1");
+  var pass2 = document.getElementById("password2");
+    
+  if(pass1.value !== pass2.value || pass1.value == "" ){
+   pass2.setCustomValidity('no coinside');
+  } else {
+    pass2.setCustomValidity('');
+  }
+}
+
+// Validacion checkbox
+
+var form =document.querySelector("form");
+
+form.addEventListener("submit", (event) => {
+  var checkboxCheck = document.getElementById("terminos").checked;
+  
+  event.preventDefault();
+  
+  if(checkboxCheck){
+    form.submit();
+  }
+ })
+
+
+
