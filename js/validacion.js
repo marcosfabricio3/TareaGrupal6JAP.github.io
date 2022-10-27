@@ -61,8 +61,12 @@ form.addEventListener("submit", (event) => {
   }
 
   var nuevoBotonDeTerminos = `<button type="button" class="btn btn-link ps-0" id="btn-modal-terminos" data-bs-toggle="modal" data-bs-target="#modalTerminos" style="color:red ;">Términos del servicio</button>`
+  var labelInvalido = `<label class="form-check-label" for="terminos" style="color: red;">Acepto los términos y condiciones del servicio.</label>`
+  var cartelCheckInvalido = `<label for="boton" class="form-label" style="padding:10px; color:red;">Debe aceptar los términos del servicio</label>`
   if(!checkboxCheck){
     document.getElementById("botonTerminos").innerHTML = nuevoBotonDeTerminos;
+    document.getElementById("labelTerminos").innerHTML = labelInvalido;
+    document.getElementById("cartelCheckbox").innerHTML = cartelCheckInvalido;
   }
 })
 
@@ -70,10 +74,15 @@ form.addEventListener("submit", (event) => {
  document.getElementById("terminos").addEventListener('click', ()=> {
 
   var nuevoBotonChekeado = ` <button type="button" class="btn btn-link ps-0" id="btn-modal-terminos" data-bs-toggle="modal" data-bs-target="#modalTerminos">Términos del servicio</button>`;
+  var labelValido = `<label class="form-check-label" for="terminos" style="color:darkgreen">Acepto los términos y condiciones del servicio.</label>`
+  var borrarMensajeCheckbox = ``;
+
   var checkboxCheck = document.getElementById("terminos").checked;
 
   if(checkboxCheck){
     document.getElementById("botonTerminos").innerHTML = nuevoBotonChekeado;
+    document.getElementById("labelTerminos").innerHTML = labelValido;
+    document.getElementById("cartelCheckbox").innerHTML = borrarMensajeCheckbox;
   }
 
 });
