@@ -61,12 +61,19 @@ form.addEventListener("submit", (event) => {
   }
 
   var nuevoBotonDeTerminos = `<button type="button" class="btn btn-link ps-0" id="btn-modal-terminos" data-bs-toggle="modal" data-bs-target="#modalTerminos" style="color:red ;">Términos del servicio</button>`
-  var nuevoBotonChekeado = ` <button type="button" class="btn btn-link ps-0" id="btn-modal-terminos" data-bs-toggle="modal" data-bs-target="#modalTerminos">Términos del servicio</button>`
   if(!checkboxCheck){
     document.getElementById("botonTerminos").innerHTML = nuevoBotonDeTerminos;
-  }else if(checkboxCheck){
-document.getElementById("botonTerminos").innerHTML = nuevoBotonChekeado;
   }
 })
 
+//Checkbox en tiempo real
+ document.getElementById("terminos").addEventListener('click', ()=> {
 
+  var nuevoBotonChekeado = ` <button type="button" class="btn btn-link ps-0" id="btn-modal-terminos" data-bs-toggle="modal" data-bs-target="#modalTerminos">Términos del servicio</button>`;
+  var checkboxCheck = document.getElementById("terminos").checked;
+
+  if(checkboxCheck){
+    document.getElementById("botonTerminos").innerHTML = nuevoBotonChekeado;
+  }
+
+});
