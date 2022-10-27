@@ -34,6 +34,19 @@ const validarpass = () =>{
   }
 }
 
+const validarFormulario = (e) => {
+	switch (e.target.name) {
+		case "password2":
+			validarpass();
+		break;
+	}
+}
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
 // Validacion checkbox
 
 var form =document.querySelector("form");
@@ -46,7 +59,6 @@ form.addEventListener("submit", (event) => {
   if(checkboxCheck){
     form.submit();
   }
- })
-
+})
 
 
